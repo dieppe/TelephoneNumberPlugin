@@ -19,7 +19,6 @@
     </js-module>
 
     <platform name="android">
-        <source-file src="src/com/simonmacdonald/cordova/plugins/TelephoneNumber.java" target-dir="src/com/simonmacdonald/cordova/plugins" />
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="TelephoneNumber" >
                 <param name="android-package" value="com.simonmacdonald.cordova.plugins.TelephoneNumber"/>
@@ -30,8 +29,7 @@
             <uses-permission android:name="android.permission.READ_PHONE_STATE" />
         </config-file>
 
-
+        <source-file src="src/android/com/simonmacdonald/cordova/plugins/TelephoneNumber.java" target-dir="src/com/simonmacdonald/cordova/plugins" />
     </platform>
 
 </plugin>
-
