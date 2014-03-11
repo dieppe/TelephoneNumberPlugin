@@ -29,4 +29,10 @@
         <source-file src="src/android/SIMInfos.java" target-dir="src/com/jnuine/cordova" />
     </platform>
 
+    <platform name="ios">
+        <header-file src="src/ios/SIMInfos.h" />
+        <source-file src="src/ios/SIMInfos.m" />
+        <framework src="CoreTelephony.framework" />
+    </platform>
+
 </plugin>
