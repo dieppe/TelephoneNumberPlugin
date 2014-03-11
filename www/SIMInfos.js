@@ -1,11 +1,15 @@
 var exec = require("cordova/exec");
 
-var TelephoneNumber = function () {};
+var SIMInfos = function () {};
 
-TelephoneNumber.NO_TELEPHONE_NUMBER = 0;
+SIMInfos.NO_TELEPHONE_NUMBER = 0;
 
-TelephoneNumber.prototype.get = function (success, fail) {
-    exec(success,fail,'TelephoneNumber','get',[]);
+SIMInfos.prototype.getPhoneNumber = function (success, fail) {
+    exec(success,fail,'SIMInfos','getPhoneNumber',[]);
 };
 
-module.exports = TelephoneNumber;
+SIMInfos.prototype.getCountry = function (success, fail) {
+    exec(success,fail,'SIMInfos','getCountry',[]);
+};
+
+module.exports = SIMInfos;
