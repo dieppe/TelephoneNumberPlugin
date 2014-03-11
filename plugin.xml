@@ -2,26 +2,23 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="com.simonmacdonald.telephonenumber"
+        id="com.jnuine.siminfos"
         version="1.0.0">
-    <engines>
-        <engine name="cordova-android" version=">=3.0.0"/>
-    </engines>
 
-    <name>TelephoneNumber</name>
-    <description>This plugin allows your to get hold of the telephone number from an android device</description>
-    <author>Simon MacDonald, updated to Cordova 3 by Russell Stather</author>
-    <keywords>android, phone number</keywords>
+    <name>SIMInfos</name>
+    <description>This plugin allows you to access some SIM related informations.</description>
+    <author>Simon MacDonald, updated to Cordova 3 by Russell Stather, further development by Clément Vollet for Jnuine</author>
+    <keywords>android, ios, sim, phone number</keywords>
     <license>MIT</license>
 
-    <js-module src="www/telephonenumber.js" name="telephonenumber">
-        <clobbers target="window.TelephoneNumber" />
+    <js-module src="www/SIMInfos.js" name="siminfos">
+        <clobbers target="window.SIMInfos" />
     </js-module>
 
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="TelephoneNumber" >
-                <param name="android-package" value="com.simonmacdonald.cordova.plugins.TelephoneNumber"/>
+            <feature name="SIMInfos" >
+                <param name="android-package" value="com.jnuine.cordova.SIMInfos"/>
             </feature>
         </config-file>
 
@@ -29,7 +26,7 @@
             <uses-permission android:name="android.permission.READ_PHONE_STATE" />
         </config-file>
 
-        <source-file src="src/android/com/simonmacdonald/cordova/plugins/TelephoneNumber.java" target-dir="src/com/simonmacdonald/cordova/plugins" />
+        <source-file src="src/android/SIMInfos.java" target-dir="src/com/jnuine/cordova" />
     </platform>
 
 </plugin>
