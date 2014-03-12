@@ -4,6 +4,7 @@ import java.util.Locale;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.LOG;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 
@@ -11,6 +12,8 @@ import android.content.Context;
 import android.telephony.TelephonyManager;
 
 public class SIMInfos extends CordovaPlugin {
+
+    private static final String TAG = "SMSInfos";
 
     private static final String GET_PHONE_NUMBER = "getPhoneNumber";
     private static final String GET_COUNTRY = "getCountry";
@@ -43,16 +46,19 @@ public class SIMInfos extends CordovaPlugin {
         try {
             final String simCountry = telephonyManager.getSimCountryIso();
             if (simCountry != null && simCountry.length() == 2) { // SIM country code is available
-                return simCountry.toLowerCase(Locale.US);
+                LOG.d(TAG, "Sim Country found " + simCountry);
+                return simCountry.toUpperCase(Locale.US);
             }
             else if (telephonyManager.getPhoneType() != TelephonyManager.PHONE_TYPE_CDMA) { // device is not 3G (would be unreliable)
-                String networkCountry = telephonyManager.getNetworkCountryIso();
+                final String networkCountry = telephonyManager.getNetworkCountryIso();
+                LOG.d(TAG, "Network Country found " + networkCountry);
                 if (networkCountry != null && networkCountry.length() == 2) { // network country code is available
-                    return networkCountry.toLowerCase(Locale.US);
+                    return networkCountry.toUpperCase(Locale.US);
                 }
             }
         }
         catch (Exception e) {}
+        LOG.d(TAG, "NO COUNTRY FOUND :(");
         return null;
     }
 }
