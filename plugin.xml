@@ -30,6 +30,12 @@
     </platform>
 
     <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="SMSInfos">
+                <param name="ios-package" value="SMSInfos"/>
+            </feature>
+        </config-file>
+
         <header-file src="src/ios/SIMInfos.h" />
         <source-file src="src/ios/SIMInfos.m" />
         <framework src="CoreTelephony.framework" />
