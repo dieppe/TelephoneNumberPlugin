@@ -17,7 +17,7 @@
     if (netInfo) {
         CTCarrier *carrier = [netInfo subscriberCellularProvider];
         if (carrier) {
-            NSString *result = [carrier mobileCountryCode];
+            NSString *result = [carrier isoCountryCode];
             if (result) {
                 pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
             }
