@@ -13,7 +13,7 @@ import android.telephony.TelephonyManager;
 
 public class SIMInfos extends CordovaPlugin {
 
-    private static final String TAG = "SMSInfos";
+    private static final String TAG = "SIMInfos";
 
     private static final String GET_PHONE_NUMBER = "getPhoneNumber";
     private static final String GET_COUNTRY = "getCountry";

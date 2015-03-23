@@ -31,8 +31,8 @@
 
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="SMSInfos">
-                <param name="ios-package" value="SMSInfos"/>
+            <feature name="SIMInfos">
+                <param name="ios-package" value="SIMInfos"/>
             </feature>
         </config-file>
 
